@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset=UTF-8>
+	<meta name="robots" content="noindex, nofollow">
+    <title>contents</title>   
+<style>
+html,body{font-size:9pt}
+body{margin-left:10px;font-family: Comic Sans MS,Microsoft YaHei,serif,sans-serif}
+a:not(.w):link{text-decoration:none;color:blue}
+a:not(.w):visited{text-decoration:none;color:blue}
+a:not(.w):active{text-decoration:underline;color:blue}
+a:not(.w):hover{text-decoration:underline;}
+li a{display:block}
+li.mk>a {
+    color: red!important;
+}
+.w{margin:0 0 0 2px;color:blue;text-decoration:none;}
+.external_link_icon{background:url(../css/img/external.png) no-repeat scroll right;padding-right:14px}
+.pdf{background:url(../css/img/pdf.ico) no-repeat scroll right;padding-right: 16px; background-size: 12px 14px;}
+.tool{display: inline;background:url(../css/img/tool.ico) no-repeat scroll right;padding-right: 16px; background-size: 12px 14px;}
+ul{list-style-type:none;padding-left:25px;padding-bottom:5px}
+.x{display:block;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.x::before{content:"\25B6";color:gray;display:inline-block;margin-right:3px;font-size:70%}
+.x:hover{font-weight:bold;background-color:whitesmoke}
+.x-down::before{-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg);transform:rotate(90deg)}
+.y{display:none}
+.active{display:block}
+#v{margin:10px 0 100px 0;padding:0}
+#v li{margin: 2px 0!important;}
+.al{font-size:8pt;top:4px;left:20px;cursor:pointer;padding-right: 5px;}
+.p {display:inline}
+#sBar{margin-top:10px}
+.sR{display:none}
+.sR1{color:red;cursor: pointer;padding: 3px;vertical-align: top;}
+#tre{position: absolute; left: 205px; color: plum;cursor:pointer;display:none;}
+#te{color: darkgrey;cursor:default;}
+#gotop{font-size:20px;display:none;position:fixed;top:40%;right:10px;z-index:99;border:none;outline:none;background-color:gainsboro;color:white;cursor:pointer;padding:5px}
+#gotop:hover{background-color:#bbb}
+</style>
+	
+</head>
+<body>
+<span class="al">
+    <a href="index.html" class="w" target="mainframe">electric</a>
+</span>
+
+<form id="sBar" method="post" action="" onSubmit="bz();sR();SearchIt();return false;">
+	<div>
+		<input style="width:170px" type="text" id="keyword" placeholder=" " onClick="this.select();" onpaste="fin()"><input type="submit" value="Find" onClick="bz();sR();SearchIt();return false;" style=" vertical-align: top; "><span class="sR1" onClick="sR1();zb()" title="收起">x</span>
+	</div>
+	<div id="sR" class="sR">
+		<select style="border: .5px solid blue; width: 219px; " size="15" id="Result" onclick="Go();"></select>
+	</div>
+</form><br>
+<ul id="v" onmouseover="s_tre()" onmouseout="h_tre()">
+	<span id="tre" onclick="al()"> [+/-]</span><span id="te">[0h 00m]</span><br><br>
+		<li><span class="x">制图</span>
+		<ul class="y">
+			<li><span class="x">EPLAN</span>
+				<ul class="y">
+					<li><a>前言_EPLAN</a></li>
+					<li><a class="p" href="https://www.eplan.help/help/platform/2.7/zh-CN/help/EPLAN_Help.htm">EPLAN 帮助系统</a></li>
+					<li><a>EPLAN-P8常用快捷键</a></li>
+				</ul>				
+			</li>
+			<li><span class="x">CAD</span>
+				<ul class="y">
+					<li></li>
+				</ul>								
+			</li>
+			<li><a>工程常用的电气符号</a></li>				
+			<li><a>电气制图和电气图形符号国家标准的组成（四类27项）</a></li>	
+			<li><a>读懂照明系统图</a></li>						
+			<li><a>读懂照明平面图</a></li>	
+			<li><a>配电箱系统图例</a></li>	
+		</ul>
+	</li>
+	<li><span class="x">配电</span>
+		<ul class="y">
+			<li><a>端子实物</a></li>			
+			<li><a>电磁阀选型</a></li>			
+			<li><a>电缆</a></li>			
+			<li><a>单相电机</a></li>			
+			<li><a>断电延时继电器</a></li>			
+			<li><a>ATSE中性线先合后分</a></li>			
+			<li><a>变压器参数计算</a></li>			
+			<li><a>零线</a></li>			
+			<li><a>无功补偿的原理作用及使用方法</a></li>			
+			<li><a>UPS不间断电源</a></li>			
+			<li><a>隔离变压器</a></li>			
+			<li><a>高次谐波</a></li>			
+			<li><a>接地系统相关总结</a></li>
+			<li><a>交流电动机</a></li>
+			<li><a>低压电器</a></li>
+			<li><a>低压配电实践</a></li>
+			<li><a>保护元件</a></li>
+			<li><a>等电位联结</a></li>					
+			<li><a>家用单相三线闭合型安装线路</a></li>									
+		</ul>
+	</li>	
+	<li><span class="x">电子电路</span>
+		<ul class="y">
+			<li><a>上拉电阻</a></li>										
+			<li><a>三极管原理</a></li>										
+			<li><a>关联参考方向</a></li>										
+			<li><a>节点电流计算</a></li>										
+			<li><a>叠加定理</a></li>										
+		</ul>
+	</li>	
+	<li><span class="x">三菱</span>
+		<ul class="y">
+			<li><span class="x">---</span>
+				<ul class="y">
+					<li><a>顺序功能图</a></li>
+					<li><a>步进指令与步进梯形图</a></li>
+					<li><a>GX中的SFC程序编辑</a></li>
+					<li><a>程序指令前言</a></li>
+					<li><a>FOR-NEXT_循环指令</a></li>
+					<li><a>CML_取反传送</a></li>
+					<li><a>INC-DEC_加一减一</a></li>
+					<li><a>WAND-WOR-WXOR_逻辑位运算</a></li>
+					<li><a>ZRST_区间复位</a></li>
+					<li><a>VRRD-VRSC_模拟电位器</a></li>
+					<li><a>FX特殊功能模块</a></li>
+					<li><a>FROM-TO</a></li>
+					<li><a>RS_串行通信</a></li>
+					<li><a>ASCI-HEX-CCD</a></li>
+					<li><a>REF</a></li>
+					<li><a>REFF_输入滤波时间</a></li>
+					<li><a>WDT</a></li>
+					<li><a>位置控制</a></li>
+					<li><a>ZRN_原点回归指令</a></li>
+					<li><a>ABS_绝对位置读取</a></li>
+					<li><a>EXTR_变频器通讯指令</a></li>
+					<li><a>ALT_翻转</a></li>
+					<li><a>ROTC_旋转工作台</a></li>  
+				</ul>
+			</li>
+			<li><span class="x">主单元指令</span>
+				<ul class="y">
+					<li><a>MEP-MEF</a></li>
+					<li><a>CMP-ZCP-DECMP-DEZCP-LD触点比较</a></li>
+					<li><a>PLSY-PLSV-PLSR-PWM</a></li>
+					<li><a>DRVI-DRVA</a></li>
+					<li class="mk"><a>PID</a></li>
+					<li><a>TKY-HKY-DSW-ASC-PRUN</a></li>
+					<li><a>RAMP</a></li>
+					<li><a>多级分频</a></li>
+					<li><a>STMR-TTMR-TCMP-TZCP-TADD-TRD-TWR-HOUR</a></li>
+					<li><a>ABSD-INCD</a></li>
+					<li><a>SER-SORT</a></li>
+					<li><a>SPD</a></li>
+					<li><a>高速计数</a></li>
+					<li><a>增减计数</a></li>
+					<li><a>MTR</a></li>
+					<li><a>数值处理</a></li>
+					<li><a>ANS-ANR</a></li>
+					<li><a>SUM-BON-MEAN</a></li>
+					<li><a>DECO-ENCO</a></li>
+					<li><a>ROL-RCL-SFTL-WSFL-SFWR-SFRD-SWAP-XCH</a></li>
+					<li><a>MOV-SMOV-FMOV-BMOV</a></li>
+					<li><a>16键输入指令HKY</a></li>
+					<li><a>MC-MCR_主控和主控复位指令</a></li>
+					<li><a>软元件分配表</a></li>
+					<li><a>中断跳转</a></li>
+					<li><a>堆栈</a></li>
+					<li><a>SFC与STL及转化梯形图</a></li>
+					<li><a>IST_便当指令</a></li>
+					<li><a>变址寄存器</a></li>
+				</ul>
+			</li>
+			<li><span class="x">模拟量</span>
+				<ul class="y">
+					<li><a>FX2N模拟量</a></li>
+				</ul>
+			</li>
+			<li><span class="x">通信</span>
+				<ul class="y">
+					<li><a>通信相关</a></li>
+					<li><a>N-N网络</a></li>
+					<li><a>并行链接</a></li>
+					<li><a>CC-Link</a></li>
+				</ul>
+			</li>
+			<li><span class="x">变频-步进-伺服</span>
+				<ul class="y">
+					<li><span class="x">变频</span>
+						<ul class="y">
+							<li><a>FR-E500</a></li>			
+							<li><a>应用案例集1</a></li>			
+							<li><a>变频器过电流</a></li>			
+						</ul>
+					</li>
+					<li><span class="x">步进&伺服</span>
+						<ul class="y">
+							<li><a>伺服系统</a></li>
+							<li><a>伺服应用实例</a></li>
+							<li><a>步进电机结构原理及应用案例</a></li>
+							<li><a>plc控制步进电机</a></li>
+							<li><a>步进接线</a></li>
+							<li><a>步进电机特点</a></li>		
+						</ul>
+					</li>		
+				</ul>
+			</li>
+			<li><span class="x">参照</span>
+				<ul class="y">
+					<li><a class="p pdf" target="mainframe" href="../extra/PDF.js/web/viewer.html?file=../20040719.pdf">PLC 控制系统的可靠性设计</a></li>
+					<li><a>可靠性</a></li>
+					<li><a>控制系统设计步骤</a></li>
+					<li><a>自动门</a></li>
+					<li><a>电镀槽</a></li>
+					<li><a>红绿灯</a></li>	
+					<li><a>星三角</a></li>
+					<li><a>剪板机</a></li>
+					<li><a>彩灯</a></li>
+					<li><a>三台风机监控</a></li>
+					<li><a>案例集（二）</a></li>
+					<li><a>停电保持用的用途示例</a></li>
+					<li><a>去抖动</a></li>
+					<li><a>急停常闭触点处理</a></li>
+					<li><a>自动程序的编程方法</a></li>
+					<li><a>具有多种工作方式的编程方法</a></li>
+					<li><a>案例集（一）</a></li>
+					<li><a>模块分类与型号选择</a></li>
+					<li><a>减少输入点数</a></li>
+					<li><a>常用逻辑变换公式</a></li>
+					<li><a>C650车床传统继电控制分析</a></li>
+					<li><a>传送带先启后停</a></li>
+					<li><a>单按钮启停</a></li>
+					<li><a>单按钮控制五台电机运行</a></li>
+					<li><a>定时器</a></li>
+					<li><a>双重控制</a></li>
+					<li><a>双线圈处理</a></li>
+					<li><a>密码锁_比较指令</a></li>
+					<li><a>差分信号</a></li>
+					<li><a>开关逻辑字控制灯全亮全灭</a></li>
+					<li><a>机械手夹取放置SFC</a></li>
+					<li><a>脉冲发生器_先通后断和先断后通</a></li>
+					<li><a>货物存取控制</a></li>
+					<li><a>分类分拣</a></li>
+					<li><a>送料小车设计</a></li>
+					<li><a>钻床同时钻大小孔_并行序列_SFC</a></li>
+					<li><a>深孔钻三次进给</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><span class="x">其它</span>
+		<ul class="y">
+			<li><a class="p pdf" target="mainframe" href="../extra/PDF.js/web/viewer.html?file=../eg.pdf">PDF浏览器</a></li>				
+			<li><a class="p" href="http://www.bjx.com.cn/">电力-北极星电力网-电力门户网站</a></li>									
+			<li><a class="p" href="http://www.fx-plc.com/">广东圆丰自动化</a></li>									
+		</ul>
+	</li>
+	<li><a class="p" href="https://github.com/wulingpo/electric/commits/master">updates</a></li>
+</ul>
+<button onclick="topFunction()" id="gotop">^</button>
+
+
+<script>
+//折叠
+var toggler = document.getElementsByClassName("x");
+var i;
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".y").classList.toggle("active");
+    this.classList.toggle("x-down");
+  });
+};
+
+var _tre = document.getElementById("tre");
+function h_tre(){
+_tre.style.display = 'none';
+}
+function s_tre(){
+_tre.style.display = 'block';
+}
+
+var Flag1 = false;
+function al() {
+	var toggler = document.getElementsByClassName("x");
+	var toggler2 = document.getElementsByClassName("y");
+	Flag1 = !Flag1;
+	if (Flag1) {
+			for (i = 0; i < toggler2.length; i++) {
+				toggler2[i].classList.remove("x-down");
+				toggler2[i].classList.add("active");
+			};
+			for (i = 0; i < toggler.length; i++) {
+				toggler[i].classList.remove("active");
+				toggler[i].classList.add("x-down");
+			};
+	} else {
+			for (i = 0; i < toggler.length; i++) {
+				toggler[i].classList.remove("x-down");
+				toggler[i].classList.add("active");
+			};
+			for (i = 0; i < toggler2.length; i++) {
+				toggler2[i].classList.remove("active");
+				toggler2[i].classList.add("x-down");
+			};
+	};
+};
+
+//当前位置
+function a_hl() {
+	var ele = document.querySelectorAll('#v a:not(.p)');
+	for (var k=0; k<ele.length; k++) {
+    	ele[k].setAttribute('id', (k+1)); 
+		ele[k].addEventListener("click",function(e) {
+			var arr = document.querySelectorAll('#v a:not(.p)');
+			for (var i=0; i<arr.length; i++) {
+				arr[i].style.backgroundColor = "white";
+				arr[i].style.color = "blue";
+				arr[i].classList.remove('heh');
+			}
+			e.target.style.backgroundColor = "#e8e8e8";
+			e.target.classList.add('heh');
+		});
+	}
+}
+
+//链接补全，postMessage
+var aTag_innerH = [];
+var aTag = document.querySelectorAll('#v a:not(.p)');
+for (var i = 0; i < aTag.length; i++) {
+	aTag[i].setAttribute('target', 'mainframe');
+	aTag[i].setAttribute('href', aTag[i].innerHTML + '.html');
+	aTag_innerH.push(aTag[i].innerHTML);
+};
+function zb(){
+top.postMessage(''+aTag_innerH,'*');
+}
+function bz(){
+var bz = document.getElementById("keyword").value;
+top.postMessage(bz,'*');
+}
+
+//patch
+var fs = document.getElementsByTagName("a");
+var f;
+for (f = 0; f < fs.length; f++) {
+  fs[f].addEventListener("click", function() {
+    zb();
+  });
+};
+
+//站外链接
+function target_blank() {
+	var anchors = document.querySelectorAll("a[href^='http']:not(._top)");
+	for (var l = 0; l < anchors.length; l++) {
+			anchors[l].setAttribute('target', '_blank');
+			anchors[l].classList.add('external_link_icon');
+	};
+};
+
+
+
+window.onload=function(){zb();a_hl();target_blank();}
+
+//数组匹配
+var words = new Array();
+var rank = new Array();
+function SearchIt() {
+    function addToRanks(index, r) {
+        var i;
+        var n = 0;
+        for (i = 0; i < rank.length; i++) {
+            if (rank[i][0] == index) {
+                rank[i][1] += r;
+                return;
+            }
+        }
+        n = rank.length;
+        rank[n] = new Array();
+        rank[n][0] = index;
+        rank[n][1] = r;
+    }
+    var i, j;
+    var tn, str;
+    var forSearch = new Array();
+    str = document.getElementById("keyword").value;
+    var inquote = false;
+    var tmp = "";
+    words.length = 0;
+    for (i = 0; i < str.length; i++) {
+        if (inquote) {
+            if (str.charAt(i) == '"') {
+                if (tmp != "") {
+                    words[words.length] = tmp;
+                    tmp = "";
+                }
+                inquote = false;
+            } else {
+                tmp += str.charAt(i);
+            }
+        } else {
+            if (str.charAt(i) == '"') {
+                if (tmp != "") {
+                    words[words.length] = tmp;
+                    tmp = "";
+                }
+                inquote = true;
+            } else if (str.charAt(i) == ' ') {
+                if (tmp != "") {
+                    words[words.length] = tmp;
+                    tmp = "";
+                }
+            } else {
+                tmp += str.charAt(i);
+            }
+        }
+    }
+    if (tmp != "") {
+        words[words.length] = tmp;
+        tmp = "";
+    }
+    document.getElementById("Result").options.length = 0;
+    var rrank = 1;
+    var RegExp_words = new Array();
+    for (i = 0; i < words.length; i++) {
+        RegExp_words[i] = new RegExp(words[i], "gi");
+    }
+    forSearch.length = 0;
+    tn = contents.length / 3;
+    for (i = 0; i <= tn - 1; i++) {
+        forSearch[i] = i;
+    }
+    rank.length = 0;
+    for (i = 0; i <= forSearch.length - 1; i++) {
+        str = contents[forSearch[i] * 3 + 1];
+        rrank = 1;
+        for (j = 0; j < RegExp_words.length; j++) {
+            r = str.match(RegExp_words[j]);
+            if (r != null) {
+                rrank *= (r.length + 1);
+            }
+        }
+        if (rrank > 1) {
+            addToRanks(forSearch[i], Math.round(Math.pow(rrank, 1 / RegExp_words.length) * 20));
+        }
+    }
+    for (i = 0; i <= forSearch.length - 1; i++) {
+        str = contents[forSearch[i] * 3];
+        rrank = 1;
+        for (j = 0; j < RegExp_words.length; j++) {
+            r = str.match(RegExp_words[j]);
+            if (r != null) {
+                rrank *= (r.length + 1);
+            }
+        }
+        if (rrank > 1) {
+            addToRanks(forSearch[i], Math.round(Math.pow(rrank, 1 / RegExp_words.length)));
+        }
+    }
+    if (rank.length > 0) {
+        var t = new Array();
+        for (i = 0; i <= rank.length - 2; i++) {
+            for (j = 0; j <= rank.length - 2 - i; j++) {
+                if (rank[j][1] < rank[j + 1][1]) {
+                    t = rank[j];
+                    rank[j] = rank[j + 1];
+                    rank[j + 1] = t;
+                }
+            }
+        }
+        for (i = 0; i <= rank.length - 1; i++) {
+            var bbb = rank[i][1]-1;
+			var ccc = contents[rank[i][0] * 3 + 1];
+            document.getElementById("Result").options[document.getElementById("Result").options.length] = new Option(ccc + " [" + bbb + "]", ccc);
+            if (i == 0) {
+                document.getElementById("Result").selectedIndex = 0;
+            }
+        }
+    } else {
+		document.getElementById("sR").classList.add('sR');
+		zb();
+        document.getElementById("keyword").value = "";
+        document.getElementById("keyword").setAttribute('placeholder', '没有相关内容');
+    }
+}
+function Go(){
+	var i;
+	var url = "";
+	for(i=0;i<document.getElementById("Result").options.length;i++){
+		 if(document.getElementById("Result").options[i].selected){
+			url = document.getElementById("Result").options[i].value;
+			break;
+		 }
+	}
+	if(aTag_innerH.includes(url)){
+		window.open(url + '.html','mainframe');
+		bz();
+	}
+}
+function sR(){
+document.getElementById("sR").classList.remove('sR');
+}
+function sR1(){
+document.getElementById("sR").classList.add('sR');
+document.getElementById("keyword").value = "";
+document.getElementById("keyword").setAttribute('placeholder', '');
+document.getElementById('keyword').focus()
+}
+
+//粘贴并搜索
+function fin(){
+	window.setTimeout(function(){bz();sR();SearchIt();return false;},150);
+}
+
+//返回顶部
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+        document.getElementById("gotop").style.display = "block";
+    } else {
+        document.getElementById("gotop").style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+//计时
+function two_char(n) {
+            return n >= 10 ? n : "0" + n;
+        }
+var minute=0; 
+var hour=0; 
+window.setTimeout("interval();",60000); 
+function interval() 
+{ 
+minute++; 
+if(minute==60) 
+{ 
+minute=0;hour+=1; 
+} 
+document.getElementById("te").innerHTML = "["+hour+"h "+two_char(minute)+"m]"; 
+window.setTimeout("interval();",60000); 
+} 
+</script>
+
+<script type="text/javascript">	
+//右侧翻页
+window.addEventListener("message", function( event ) {
+	var key = event.data;
+	if(key=='add'){
+		zb();
+		var obj = document.getElementsByClassName('heh')[0];
+		obj.classList.remove('heh');
+		var ID = obj.getAttribute("id");
+		var ID_p= ID-1;
+		var arr = document.querySelectorAll('#v a:not(.p)');
+		for (var i=0; i<arr.length; i++) {
+			arr[i].style.backgroundColor = "white";
+			arr[i].style.color = "blue";
+		}		
+		var prevv = document.getElementById(ID_p);		
+		prevv.style.backgroundColor = "#e8e8e8";
+		prevv.classList.add('heh');		
+	}	
+	else if(key=='dec'){
+		zb();
+		var obj = document.getElementsByClassName('heh')[0];
+		obj.classList.remove('heh');
+		var ID = obj.getAttribute("id");
+		var ID_n= Number(ID) + 1;//值数字化
+		var arr = document.querySelectorAll('#v a:not(.p)');
+		for (var i=0; i<arr.length; i++) {
+			arr[i].style.backgroundColor = "white";
+			arr[i].style.color = "blue";
+		}		
+		var nextt = document.getElementById(ID_n);		
+		nextt.style.backgroundColor = "#e8e8e8";
+		nextt.classList.add('heh');		
+	}
+	else{
+		null
+		}
+}, false );
+</script>
+
+<script type="text/javascript">
+//装载数组
+    function downloadJSAtOnload() {
+        var element = document.createElement("script");
+        element.src = "../extra/Re-index/data.js";
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+</script>
+
+</body>
+</html>

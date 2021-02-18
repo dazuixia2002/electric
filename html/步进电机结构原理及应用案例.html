@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset=UTF-8>
+    <meta name="robots" content="noindex, nofollow">
+    <title>步进电机结构原理及应用案例</title>    
+    <link rel="stylesheet" href="../css/layout.css" type="text/css" />
+</head>
+<body>
+<div id="cr"> 
+
+<span id="edit_date"></span>
+<img src="../images/step-servo/200511183548.jpg"><br>
+<img src="../images/step-servo/200511183640.jpg"><br>
+<img src="../images/step-servo/200511183647.jpg"><br>
+<img src="../images/step-servo/200511183655.jpg"><br>
+<img src="../images/step-servo/200511183703.jpg"><br>
+<img src="../images/step-servo/200511183710.jpg"><br>
+<img src="../images/step-servo/200511183717.jpg"><br>
+<img src="../images/step-servo/200511183726.jpg"><br>
+<img src="../images/step-servo/200511183734.jpg"><br>
+<img src="../images/step-servo/200511183743.jpg"><br>
+<img src="../images/step-servo/200511183750.jpg"><br>
+<img src="../images/step-servo/200511183758.jpg"><br>
+<img src="../images/step-servo/200511183804.jpg"><br>
+<img src="../images/step-servo/200511183811.jpg"><br>
+<img src="../images/step-servo/200511183817.jpg"><br>
+<img src="../images/step-servo/200511183825.jpg"><br>
+<img src="../images/step-servo/200511183834.jpg"><br>
+<img src="../images/step-servo/200511183843.jpg"><br>
+<img src="../images/step-servo/200511183851.jpg"><br>
+<img src="../images/step-servo/200511183904.jpg"><br>
+<img src="../images/step-servo/200511183913.jpg"><br>
+<img src="../images/step-servo/200511183921.jpg"><br>
+<img src="../images/step-servo/200511183929.jpg"><br>
+<img src="../images/step-servo/200511183938.jpg"><br>
+<img src="../images/step-servo/200511183946.jpg"><br>
+<img src="../images/step-servo/200511183953.jpg"><br>
+<div class="index">
+步进电机结构和工作原理
+1、步进电机是将电脉冲信号转变为角位移或 线位移的开环控制元件。在非超载的情况 下，电机的转速、停止的位置只取决于控制 脉冲信号的频率和脉冲数。
+脉冲数越多，电机转动的角度越大。
+脉冲的频率越高，电机转速越快，但不能超 过最高频率，否则电机的力矩迅速减小，电 机不转。	k
+出韭电机的工作原
+步进电机的工作原理实际上是电磁铁的作用 原理。
+当某相定子励磁后，它吸引转子，转子的齿 与该相定子磁极上的齿对齐，转子转动一个 角度，换一相得电时，转子又转场一个角 度。如此每相不停地轮流通电，转子不停地 转动。
+其工作过程如下图所示
+所以电机运行的方向和通电的相序有关，改变通电得相 序，电机得运行方向也就改变	*
+
+1、	上述介绍的是三相单三拍的工作过程，除此以外还有三 相双三拍，三相六拍等工作方式。三相双三拍的得电方式 同时两相绕组通电：如AB-BC -CA -AB -…。三相六拍 的控制方式是：A —AB —B fBC fC —CA —A—...。
+2、	电机的转速和相序切换的频率有关，切换得越快，电机 转动的越快。电机转动得方向和相序有关。
+3、	电机每拍转动的角度，称步距角9 o步距角和
+电机的结构有关。
+_ 360° mzk
+其中m为定子绕组的相数。Z
+为转子得询数。K为通电方式，m相时m拍时，k=l, m相2m 拍时，k=2. '
+反应式步进电机结构（轴向分布）
+步进驱动器原理
+1、从步进电机的转动原理可以得出，要使步 进电机正常运行，必须安规律控制步进电机 的每一相绕组得电。步进驱动器接收外部的 信号是方向信号（DIR）和脉冲信号（CP）。另 外步进电机在停止时，通常有一相得电，电 机的转子被锁住，所以当需要转子松开时， 可以使用脱机信号（FREE）.
+环型分配器的功能：环型分配器的功能主要是把外部CP 椰送进的脉冲进行分配，给功率放大器，功率放大器相 叵相的晶体管导哗，步进电机的线圈得点。
+步进电机、步进驱动器和PLC间的连接
+步进驱动器有关细分的设置
+什么叫细分？
+为了提高步进电动机控制的精度，现在的步 进驱动器都有细分的功能，所谓细分，就是 通过驱动器中电路的方法把步距角减小。
+比如把步进驱动器设置成5细分，假设原来步 距角1.8。那么设成5细分后，步距角就是 0.36° o也就是说原来一步可以走完的，设 置成细分后需要走5步。	k
+设置细分时要注意的事项：
+1、	一般的情况下，细分数不能设置的过大， 因为在控制脉冲频率不变的情况下，细分越 大，电机的转速越慢，而且电机的输出力矩 减小。
+2、	驱动步进电机的脉冲频率不能太高，一般|
+不超过2KHz,否则电机输出的力矩迅速减 小。_________________
+步进驱动器细分的设置方法
+</div>
+
+
+
+
+<script src="../js/common.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

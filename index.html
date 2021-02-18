@@ -1,0 +1,48 @@
+<html lang="zh-CN">
+<head>
+	<meta charset=UTF-8>
+	<meta name="robots" content="noindex, nofollow">
+	<title>electric</title>
+<style>
+html,body,iframe{margin: 0;padding: 0;border: 0;height:100%;}
+#aa div{float:left}
+#dd{border-right:1px solid #ccc;}
+</style>
+</head>
+<body>
+<div id="aa"> 
+<div id="dd"><iframe id="bb" src="html/contents.html"></iframe></div>
+<div><iframe id="cc" src="html/index.html" name="mainframe"></iframe></div>
+</div>
+<script>
+var xx = document.body.clientWidth;
+document.getElementById('aa').style.width=xx+'px';
+document.getElementById('bb').style.width='270px';
+document.getElementById('cc').style.width=xx-271+'px';
+
+window.addEventListener("message", function( event ) {
+	var key = event.data;
+	if(key=='hidden_bb'){
+		document.getElementById('dd').style.display='none';
+		document.getElementById('cc').style.width=xx+'px';
+	}
+	else if(key=='show_bb'){
+		document.getElementById('dd').style.display='block';
+		document.getElementById('cc').style.width=xx-271+'px';
+	}
+	else if(key=='prev1'){
+		document.getElementById('bb').contentWindow.postMessage("add",'*');
+	}
+	else if(key=='next1'){
+		document.getElementById('bb').contentWindow.postMessage("dec",'*');
+	}
+	else{
+		var iframe = document.getElementById('cc');
+		iframe.onload = function(){
+			iframe.contentWindow.postMessage(key,'*');
+		}
+	}
+}, false );
+</script>
+</body>
+</html>

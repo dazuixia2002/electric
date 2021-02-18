@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset=UTF-8>
+	<meta name="robots" content="noindex, nofollow">
+    <title>重命名c盘用户文件夹</title>
+    <link rel="stylesheet" href="../css/layout.css" type="text/css" />
+</head>
+<body>
+<div id="cr">
+<span id="edit_date"></span>
+<h2>假设我们需要将帐户<code>A</code>改名为<code>B</code>。首先我们需要用另一个管理员帐户<code>C</code>登陆系统。登陆之后，进行如下操作：</h2>
+
+1．在控制面板-〉用户帐户中将帐户<code>A</code>改名为<code>B</code>。<br><br>
+
+2．打开<code>C:\Users或“用户”</code>文件夹，将文件夹<code>A</code>重命名为<code>B</code>。<br><br>
+
+3．在注册表编辑器中定位到以下路径：<br> <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code><br><br>
+
+4．在<code>ProfileList</code>文件夹下，分别点击名字为较长的字符串的文件夹，查看窗口右侧的<code>ProfileImagePath</code>键的内容，找到路径为<code>C:\Users\A</code>的键。<br><br>
+
+5．双击此<code>ProfileImagePath</code>键，将其内容修改为：<code>C:\Users\B</code>。<br><br>
+
+<h2>注销后，重新登陆<code>B</code>帐户，用户配置文件已经变为了<code>B</code>。</h2>
+
+<h2>这时打开任务管理器发现里面的用户名还是没有改变，方法是：</h2>
+
+1.在“运行”里面输入<code>control userpasswords2</code><br><br>
+
+2.弹出窗口，选中用户名，在属性里修改下全名就可以了<br><br>
+
+3.重启生效<br><br>
+
+
+<script src="../js/common.js" type="text/javascript"></script>
+</div>
+</body>
+</html>
